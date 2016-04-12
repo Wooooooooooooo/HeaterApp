@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D4925361CB7EA9B008A6B4D /* ThermometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4925351CB7EA9B008A6B4D /* ThermometerViewController.m */; };
+		0D4925381CB7EACC008A6B4D /* wendu_fang.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4925371CB7EACC008A6B4D /* wendu_fang.m */; };
+		0DABD5FB1CB67E3A008C0F7C /* Heater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DABD5FA1CB67E3A008C0F7C /* Heater.m */; };
+		0DABD6021CB6AAB3008C0F7C /* StatueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DABD6011CB6AAB3008C0F7C /* StatueViewController.m */; };
+		0DABD6091CB6CA1A008C0F7C /* TableViewCellForStatueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DABD6081CB6CA1A008C0F7C /* TableViewCellForStatueViewController.xib */; };
+		0DABD60E1CB6FAC7008C0F7C /* ModifyHeaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DABD60D1CB6FAC7008C0F7C /* ModifyHeaterViewController.m */; };
+		0DABD6101CB6FFBB008C0F7C /* TableViewCellForModifyHeaterVIewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DABD60F1CB6FFBB008C0F7C /* TableViewCellForModifyHeaterVIewController.xib */; };
+		0DBE38711CB8129200A63A7D /* AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = 0DBE38701CB8129200A63A7D /* AFNetworking */; };
+		0DBE387E1CB83AD300A63A7D /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBE387B1CB83AC600A63A7D /* libAFNetworking.a */; };
+		0DD08AF31CB4E63B00F9402D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD08AF21CB4E63B00F9402D /* main.m */; };
+		0DD08AF61CB4E63B00F9402D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD08AF51CB4E63B00F9402D /* AppDelegate.m */; };
+		0DD08AF91CB4E63B00F9402D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD08AF81CB4E63B00F9402D /* LoginViewController.m */; };
+		0DD08AFC1CB4E63B00F9402D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD08AFA1CB4E63B00F9402D /* Main.storyboard */; };
+		0DD08AFE1CB4E63B00F9402D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD08AFD1CB4E63B00F9402D /* Assets.xcassets */; };
+		0DD08B011CB4E63B00F9402D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD08AFF1CB4E63B00F9402D /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0DBE387A1CB83AC600A63A7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBE38751CB83AC600A63A7D /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 38B7D6E2783AC6222AE1A71B68358BAD;
+			remoteInfo = AFNetworking;
+		};
+		0DBE387C1CB83AC600A63A7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DBE38751CB83AC600A63A7D /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D1F5F42D8277606431D18205106B85E;
+			remoteInfo = Pods;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D4925341CB7EA87008A6B4D /* ThermometerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThermometerViewController.h; sourceTree = "<group>"; };
+		0D4925351CB7EA9B008A6B4D /* ThermometerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThermometerViewController.m; sourceTree = "<group>"; };
+		0D4925371CB7EACC008A6B4D /* wendu_fang.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wendu_fang.m; sourceTree = "<group>"; };
+		0D4925391CB7EAD8008A6B4D /* wendu_fang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wendu_fang.h; sourceTree = "<group>"; };
+		0DABD5F91CB67E3A008C0F7C /* Heater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Heater.h; sourceTree = "<group>"; };
+		0DABD5FA1CB67E3A008C0F7C /* Heater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Heater.m; sourceTree = "<group>"; };
+		0DABD6001CB6AA9A008C0F7C /* StatueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatueViewController.h; sourceTree = "<group>"; };
+		0DABD6011CB6AAB3008C0F7C /* StatueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatueViewController.m; sourceTree = "<group>"; };
+		0DABD6081CB6CA1A008C0F7C /* TableViewCellForStatueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TableViewCellForStatueViewController.xib; path = ../TableViewCellForStatueViewController.xib; sourceTree = "<group>"; };
+		0DABD60C1CB6FAB4008C0F7C /* ModifyHeaterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifyHeaterViewController.h; sourceTree = "<group>"; };
+		0DABD60D1CB6FAC7008C0F7C /* ModifyHeaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyHeaterViewController.m; sourceTree = "<group>"; };
+		0DABD60F1CB6FFBB008C0F7C /* TableViewCellForModifyHeaterVIewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCellForModifyHeaterVIewController.xib; sourceTree = "<group>"; };
+		0DBE38701CB8129200A63A7D /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AFNetworking; sourceTree = "<group>"; };
+		0DBE38731CB83AA800A63A7D /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
+		0DBE38751CB83AC600A63A7D /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		0DD08AEE1CB4E63B00F9402D /* HeaterLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeaterLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DD08AF21CB4E63B00F9402D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0DD08AF41CB4E63B00F9402D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0DD08AF51CB4E63B00F9402D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0DD08AF71CB4E63B00F9402D /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		0DD08AF81CB4E63B00F9402D /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		0DD08AFB1CB4E63B00F9402D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0DD08AFD1CB4E63B00F9402D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0DD08B001CB4E63B00F9402D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0DD08B021CB4E63B00F9402D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6447E150E95A073240D36832 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BE588F9CA43886DA659946D1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0FF52C985E4C4994350FA10 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0DD08AEB1CB4E63B00F9402D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DBE387E1CB83AD300A63A7D /* libAFNetworking.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0DBE38761CB83AC600A63A7D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DBE387B1CB83AC600A63A7D /* libAFNetworking.a */,
+				0DBE387D1CB83AC600A63A7D /* libPods.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0DD08AE51CB4E63B00F9402D = {
+			isa = PBXGroup;
+			children = (
+				0DBE38701CB8129200A63A7D /* AFNetworking */,
+				0DD08AF01CB4E63B00F9402D /* HeaterLogin */,
+				E2DE545833AB6C0121779189 /* Pods */,
+				DD28180FB6A56D8B7DC424D0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0DD08AEF1CB4E63B00F9402D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DD08AEE1CB4E63B00F9402D /* HeaterLogin.app */,
+			);
+			name = Products;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		0DD08AF01CB4E63B00F9402D /* HeaterLogin */ = {
+			isa = PBXGroup;
+			children = (
+				0DABD5F91CB67E3A008C0F7C /* Heater.h */,
+				0DABD5FA1CB67E3A008C0F7C /* Heater.m */,
+				0DD08AF21CB4E63B00F9402D /* main.m */,
+				0DD08AF41CB4E63B00F9402D /* AppDelegate.h */,
+				0DD08AF51CB4E63B00F9402D /* AppDelegate.m */,
+				0DD08AF71CB4E63B00F9402D /* LoginViewController.h */,
+				0DD08AF81CB4E63B00F9402D /* LoginViewController.m */,
+				0DD08AFA1CB4E63B00F9402D /* Main.storyboard */,
+				0DD08AFD1CB4E63B00F9402D /* Assets.xcassets */,
+				0DD08AFF1CB4E63B00F9402D /* LaunchScreen.storyboard */,
+				0DD08B021CB4E63B00F9402D /* Info.plist */,
+				0DABD6001CB6AA9A008C0F7C /* StatueViewController.h */,
+				0DABD6011CB6AAB3008C0F7C /* StatueViewController.m */,
+				0DABD6081CB6CA1A008C0F7C /* TableViewCellForStatueViewController.xib */,
+				0DABD60C1CB6FAB4008C0F7C /* ModifyHeaterViewController.h */,
+				0DABD60D1CB6FAC7008C0F7C /* ModifyHeaterViewController.m */,
+				0DABD60F1CB6FFBB008C0F7C /* TableViewCellForModifyHeaterVIewController.xib */,
+				0D4925341CB7EA87008A6B4D /* ThermometerViewController.h */,
+				0D4925351CB7EA9B008A6B4D /* ThermometerViewController.m */,
+				0D4925371CB7EACC008A6B4D /* wendu_fang.m */,
+				0D4925391CB7EAD8008A6B4D /* wendu_fang.h */,
+				0DD08AF11CB4E63B00F9402D /* Supporting Files */,
+			);
+			path = HeaterLogin;
+			sourceTree = "<group>";
+		};
+		0DD08AF11CB4E63B00F9402D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0DD08AEF1CB4E63B00F9402D /* Products */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DD28180FB6A56D8B7DC424D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0DBE38751CB83AC600A63A7D /* Pods.xcodeproj */,
+				0DBE38731CB83AA800A63A7D /* Pods */,
+				BE588F9CA43886DA659946D1 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2DE545833AB6C0121779189 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6447E150E95A073240D36832 /* Pods.debug.xcconfig */,
+				E0FF52C985E4C4994350FA10 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0DD08AED1CB4E63B00F9402D /* HeaterLogin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DD08B051CB4E63B00F9402D /* Build configuration list for PBXNativeTarget "HeaterLogin" */;
+			buildPhases = (
+				17B35D3176BD30497D723802 /* Check Pods Manifest.lock */,
+				0DD08AEA1CB4E63B00F9402D /* Sources */,
+				0DD08AEB1CB4E63B00F9402D /* Frameworks */,
+				0DD08AEC1CB4E63B00F9402D /* Resources */,
+				7820955219988098CF4FC4C9 /* Embed Pods Frameworks */,
+				FDC1DC63A89508438C31A6E3 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HeaterLogin;
+			productName = HeaterLogin;
+			productReference = 0DD08AEE1CB4E63B00F9402D /* HeaterLogin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0DD08AE61CB4E63B00F9402D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = lmr;
+				TargetAttributes = {
+					0DD08AED1CB4E63B00F9402D = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 0DD08AE91CB4E63B00F9402D /* Build configuration list for PBXProject "HeaterLogin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0DD08AE51CB4E63B00F9402D;
+			productRefGroup = 0DD08AEF1CB4E63B00F9402D /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0DBE38761CB83AC600A63A7D /* Products */;
+					ProjectRef = 0DBE38751CB83AC600A63A7D /* Pods.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				0DD08AED1CB4E63B00F9402D /* HeaterLogin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0DBE387B1CB83AC600A63A7D /* libAFNetworking.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAFNetworking.a;
+			remoteRef = 0DBE387A1CB83AC600A63A7D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0DBE387D1CB83AC600A63A7D /* libPods.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPods.a;
+			remoteRef = 0DBE387C1CB83AC600A63A7D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0DD08AEC1CB4E63B00F9402D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DD08B011CB4E63B00F9402D /* LaunchScreen.storyboard in Resources */,
+				0DD08AFE1CB4E63B00F9402D /* Assets.xcassets in Resources */,
+				0DABD6091CB6CA1A008C0F7C /* TableViewCellForStatueViewController.xib in Resources */,
+				0DD08AFC1CB4E63B00F9402D /* Main.storyboard in Resources */,
+				0DABD6101CB6FFBB008C0F7C /* TableViewCellForModifyHeaterVIewController.xib in Resources */,
+				0DBE38711CB8129200A63A7D /* AFNetworking in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17B35D3176BD30497D723802 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7820955219988098CF4FC4C9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDC1DC63A89508438C31A6E3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0DD08AEA1CB4E63B00F9402D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DD08AF91CB4E63B00F9402D /* LoginViewController.m in Sources */,
+				0DD08AF61CB4E63B00F9402D /* AppDelegate.m in Sources */,
+				0D4925361CB7EA9B008A6B4D /* ThermometerViewController.m in Sources */,
+				0DD08AF31CB4E63B00F9402D /* main.m in Sources */,
+				0DABD6021CB6AAB3008C0F7C /* StatueViewController.m in Sources */,
+				0D4925381CB7EACC008A6B4D /* wendu_fang.m in Sources */,
+				0DABD5FB1CB67E3A008C0F7C /* Heater.m in Sources */,
+				0DABD60E1CB6FAC7008C0F7C /* ModifyHeaterViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0DD08AFA1CB4E63B00F9402D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DD08AFB1CB4E63B00F9402D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0DD08AFF1CB4E63B00F9402D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DD08B001CB4E63B00F9402D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0DD08B031CB4E63B00F9402D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0DD08B041CB4E63B00F9402D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0DD08B061CB4E63B00F9402D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6447E150E95A073240D36832 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HeaterLogin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = lmr.HeaterLogin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0DD08B071CB4E63B00F9402D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0FF52C985E4C4994350FA10 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HeaterLogin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = lmr.HeaterLogin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0DD08AE91CB4E63B00F9402D /* Build configuration list for PBXProject "HeaterLogin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DD08B031CB4E63B00F9402D /* Debug */,
+				0DD08B041CB4E63B00F9402D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0DD08B051CB4E63B00F9402D /* Build configuration list for PBXNativeTarget "HeaterLogin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DD08B061CB4E63B00F9402D /* Debug */,
+				0DD08B071CB4E63B00F9402D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0DD08AE61CB4E63B00F9402D /* Project object */;
+}
