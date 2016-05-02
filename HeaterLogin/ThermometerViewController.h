@@ -9,13 +9,13 @@
 #ifndef ThermometerViewController_h
 #define ThermometerViewController_h
 
-
 /*
     本类实现温度计操控界面
  
 */
 
 #import <UIKit/UIKit.h>
+#import "AFNetworking.h"
 
 @interface ThermometerViewController : UIViewController
 

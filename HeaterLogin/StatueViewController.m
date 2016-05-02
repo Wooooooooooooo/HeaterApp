@@ -43,7 +43,7 @@
         Heater *heater = [NSKeyedUnarchiver unarchiveObjectWithData:heaterData];
         [heaterArray addObject: heater];
     }
-    \
+    
     [self.tableView reloadData];
     
 }
@@ -89,9 +89,11 @@
     [userDefaults setObject:ID forKey:@"currentHeater"];
     [userDefaults setObject:name forKey:@"currentName"];
     [userDefaults synchronize];
+    
     /*
+    
     // 这里发送HTTP请求,获取设备的温度信息
-     NSURL *serverURL = [NSURL URLWithString:@"https://www.baidu.com/"]; //短信验证码服务器url
+     NSURL *serverURL = [NSURL URLWithString:@"http://123.184.30.117:8887/"]; //短信验证码服务器url
      
      //AFHTTPSessionManager 创建一个网络请求
      AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:serverURL];
@@ -107,17 +109,15 @@
      manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
      
      //参数urlParam 可以设置多个参数
-//     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
- //    [params setValue:ID forKey:@"ID"]; //发送ID
-     [manager GET:@"index.html" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+     [params setValue:ID forKey:@"ID"]; //发送ID
+     [manager GET:@"index.html" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+         NSLog(@"发送ID成功");
      NSLog(@"成功 HTML: %@", [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding]);
      } failure:^(NSURLSessionDataTask *task, NSError *error) {
      NSLog(@"失败 visit error: %@",error);
      }];
-     */
-    
-    
-    
+    */
     
     /*
     
@@ -131,10 +131,9 @@
     [userDefaults setObject:temperature forKey:@"currentTemperature"];
     [userDefaults setObject:heatTime forKey:@"currentHeatTime"];
     //页面跳转
-    ThermometerViewController  *viewController = [[ThermometerViewController alloc]init];//跳转到温度计状态画面
-    [self addChildViewController:viewController];
-    [self.view addSubview:viewController.view];
- //   [viewController didMoveToParentViewController:self];
+   // ThermometerViewController  *viewController = [[ThermometerViewController alloc]init];//跳转到温度计状态画面
+    RootViewController *viewController = [[RootViewController alloc]init];
+    [self presentViewController:viewController animated:YES completion:^{NSLog(@"弹出");}];
     
 }
 

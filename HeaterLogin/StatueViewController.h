@@ -15,6 +15,7 @@
 #import <UIKit/UIKit.h>
 #import "Heater.h"
 #import "ThermometerViewController.h"
+#import "RootViewController.h"
 #import "AFNetworking.h"
 
 @interface StatueViewController : UIViewController

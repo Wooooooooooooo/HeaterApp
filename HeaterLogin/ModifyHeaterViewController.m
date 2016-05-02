@@ -20,8 +20,9 @@
     NSMutableArray *heaterArray;    //存放heater的数组
     NSMutableArray *dataArray;  //储存转化为NSData数据类型的heater数组
     NSMutableArray *IDDataArray;
+    NSMutableArray *haha;
     NSArray *IDArray; //储存所有id的数组
-    
+    BOOL flag;
 }
 
 @end
@@ -31,29 +32,18 @@
 @implementation ModifyHeaterViewController
 
 -(void)viewDidLoad{
-    
+    heaterArray = [NSMutableArray array];
     [super viewDidLoad]; 
-    heaterArray = [[NSMutableArray alloc] initWithCapacity:100];//初始化存放Heater对象的数组
-    dataArray = [[NSMutableArray alloc] initWithCapacity:100];
-    //初始化存放NSData类型的Heater对象的数组,便于使用NSUserDefaults
-    IDDataArray = [[NSMutableArray alloc] initWithCapacity:100];//初始化存放已添加设备ID的动态数组
-    IDArray = [[NSArray alloc]init];    //初始化存放已添加设备ID的静态数组
-    IDArray = [NSArray arrayWithArray:IDDataArray];
    
-    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-    IDDataArray = [NSMutableArray arrayWithArray:[user objectForKey:@"IDArray"]];//读取文件中的数据到数组中
+    [self getHeaterList];
   
-    for (int i=0; i<IDDataArray.count; i++) {   //扫描获得所有的ID，用于获取ID对应的Heater对象的数据
-        
-        NSData *heaterData = [user objectForKey:[IDDataArray objectAtIndex:i]];
-        
-        Heater *heater = [NSKeyedUnarchiver unarchiveObjectWithData:heaterData];
-        [heaterArray addObject: heater];//heater对象的数组中加入heater对象
-    }
-     \
-    [self.tableView reloadData];//重新装载tableView
+    
+}
+-(void)viewWillAppear{
+    
    
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //tableView显示的行数
@@ -91,17 +81,62 @@
     //本方法实现左滑删除电暖器
     if(editingStyle == UITableViewCellEditingStyleDelete){
         
-        Heater *heater = [heaterArray objectAtIndex:indexPath.row];//从数组中删除该ID对应的Heater对象
-        NSString *ID = heater.ID;
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:ID];  //从文件中删除该ID对应的数据
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        [IDDataArray removeObject:ID];
-        IDArray = [IDDataArray copy];                       //动态数组转化为静态数组
+        Heater *heater = [[Heater alloc] init];
+        heater = [heaterArray objectAtIndex:[indexPath row]];
+        
+        NSURL *serverURL = [NSURL URLWithString:@"http://nuanyun.applinzi.com/"];
+        AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:serverURL];
+        manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];
+        NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
         NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-        [user setObject:IDArray forKey:@"IDArray"];
-        [self->heaterArray removeObjectAtIndex:[indexPath row]];
-        [tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObjects:indexPath, nil]
-                         withRowAnimation:UITableViewRowAnimationTop];
+        NSString* mobile = [user objectForKey:@"mobile"];
+        [params setValue:mobile forKey:@"mobile"]; //发送ID
+
+        [params setValue:heater.ID forKey:@"code"];
+        
+        UIActivityIndicatorView *activity = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];//指定进度轮的大小
+        
+        [activity setCenter:CGPointMake(160, 140)];//指定进度轮中心点
+        
+        [activity setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];//设置进度轮显示类型
+        
+        [self.view addSubview:activity];
+        [activity startAnimating];
+        [manager GET:@"deleteEquipment.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+               NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+            NSString *result = [dic objectForKey:@"result"];
+             NSLog(@"收到删除响应");
+           
+            if([result isEqualToString:@"1"]){
+                [self->heaterArray removeObjectAtIndex:[indexPath row]];
+                [tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObjects:indexPath, nil]
+                                 withRowAnimation:UITableViewRowAnimationTop];
+                
+            }else{
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"错误" message:@"删除失败" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:nil];
+                [alertController addAction:cancelAction];
+                [self presentViewController:alertController animated:true completion:nil];
+                [activity stopAnimating];
+                
+                
+            }
+            [activity stopAnimating];
+            
+            [self.tableView reloadData];
+            
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"错误" message:@"服务器连接错误" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:nil];
+            [alertController addAction:cancelAction];
+            [self presentViewController:alertController animated:true completion:nil];
+            [activity stopAnimating];
+        }];
+        
+       
     }
     
 }
@@ -124,13 +159,25 @@
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"添加" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         
-            UITextField *IDField = alertController.textFields[0];
-            UITextField *captchaField = alertController.textFields[1];
-            UITextField *nameField = alertController.textFields[2];
+        UITextField *IDField = alertController.textFields[0];
+        UITextField *captchaField = alertController.textFields[1];
+        UITextField *nameField = alertController.textFields[2];
+        
+        
+        if ([IDField.text isEqualToString:@""] ||[captchaField.text isEqualToString:@""] || [nameField.text isEqualToString:@""]) {
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"错误" message:@"输入框不能为空" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:nil];
+            [alertController addAction:cancelAction];
+            [self presentViewController:alertController animated:true completion:nil];
+            
+        }else{
+        
+        
         
         //此处应该向服务器发送验证设备ID于验证码是否相符的请求。
-        /*
-        NSURL *serverURL = [NSURL URLWithString:@"服务器url"];
+        
+        NSURL *serverURL = [NSURL URLWithString:@"http://nuanyun.applinzi.com/"];
         
         //AFHTTPSessionManager 创建一个网络请求
         AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:serverURL];
@@ -146,66 +193,173 @@
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
         
         //参数urlParam 可以设置多个参数
+        NSLog(@"%@",IDField.text);
+          NSLog(@"%@",captchaField.text);
+          NSLog(@"%@",nameField.text);
         NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
-        [params setValue:IDField.text forKey:@"ID"];
-        [params setValue:captchaField.text forKey:@"catcha"];
-      
-        
-        [manager GET:@"sms.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
-            NSLog(@"成功 HTML: %@", [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding]);
-        } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            NSLog(@"失败 visit error: %@",error);
-        }];
-
-        */
-        
-        
-        //此处接受HTTP响应消息
-        /*
-        
-        
-        
-        */
-        if(true){       //如果请求通过
-            Heater *heater = [[Heater alloc] init];
-            heater.ID = IDField.text;
-            heater.captcha = captchaField.text;
-            heater.name = nameField.text;
-            NSString *ID = IDField.text;
-            if([[NSUserDefaults standardUserDefaults] objectForKey:IDField.text]==nil){
-                //如果ID不存在则添加该设备到tableView和文件中
-                NSData *heaterData = [NSKeyedArchiver archivedDataWithRootObject:heater];
-                NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-                [user setObject:heaterData forKey:IDField.text]; //存入Heater对象
-                [heaterArray addObject:heater];     //HeaterArray数组中添加Heater
-                [IDDataArray addObject:ID]; //ID数组中添加ID
-                IDArray = [IDDataArray copy];                       //动态数组转化为静态数组
-                [user setObject:IDArray forKey:@"IDArray"];
-                [user synchronize];
-                [self.tableView reloadData];
-             
-            }
-            else{//如果ID存在，证明设备已经添加，弹出错误提示框
+        [params setValue:IDField.text forKey:@"code"];
+        [params setValue:captchaField.text forKey:@"password"];
+        [params setValue:nameField.text forKey:@"name"];
+        NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+        NSString *mobile = [user objectForKey:@"mobile"];
+        [params setValue:mobile forKey:@"mobile"];
+        [manager GET:@"addEquipment.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        //    NSLog(@"json为%@",responseObject);
+       //     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+            NSLog(@"json转化成功");
+            NSString *result = [responseObject objectForKey:@"result"];
+            if ([result isEqualToString:@"1"]) {
+                
+                Heater *heater = [[Heater alloc] init];
+                NSLog(@"创建累成功");
+                heater.ID = IDField.text;
+                heater.captcha = captchaField.text;
+                heater.name = nameField.text;
+                
+                    [heaterArray addObject:heater];     //HeaterArray数组中添加Heater
+                    [self.tableView reloadData];
+                
+            /*
+                else{//如果ID存在，证明设备已经添加，弹出错误提示框
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"错误" message:@"该设备已添加" preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:nil];
+                    [alertController addAction:cancelAction];
+                    [self presentViewController:alertController animated:true completion:nil];
+                }
+            */
+            }else if ([result isEqualToString:@"2"]){
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"错误" message:@"该设备已添加" preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:nil];
                 [alertController addAction:cancelAction];
                 [self presentViewController:alertController animated:true completion:nil];
+                
+            }else if([result isEqualToString:@"0"]){
+                //如果添加的设备ID与验证码不符，则弹出错误提示
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"错误" message:@"ID与验证码不符" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:nil];
+                [alertController addAction:cancelAction];
+                [self presentViewController:alertController animated:true completion:nil];
             }
-            
-           
-        }else{//如果添加的设备ID与验证码不符，则弹出错误提示
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"错误" message:@"ID与验证码不符" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:nil];
-            [alertController addAction:cancelAction];
-            [self presentViewController:alertController animated:true completion:nil];
         }
-    }];
+             failure:^(NSURLSessionDataTask *task, NSError *error) {
+                 
+                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"错误" message:@"无法连接到服务器" preferredStyle:UIAlertControllerStyleAlert];
+                 UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:nil];
+                 [alertController addAction:cancelAction];
+                 [self presentViewController:alertController animated:true completion:nil];
+                 
+             }];
+    
+        }}];
+    
     [alertController addAction:cancelAction];
     [alertController addAction:okAction];
     
     [self presentViewController:alertController animated:YES completion:nil]; //显示AlertController
+    
+}
+-(void)getHeaterList{
+  //  heaterArray = [[NSMutableArray alloc] initWithCapacity:100];
+    
+    
+    NSURL *serverURL = [NSURL URLWithString:@"http://nuanyun.applinzi.com/"];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:serverURL];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSString* mobile = [user objectForKey:@"mobile"];
+    [params setValue:mobile forKey:@"mobile"]; //发送ID
+    UIActivityIndicatorView *activity = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];//指定进度轮的大小
+    
+    [activity setCenter:CGPointMake(160, 140)];//指定进度轮中心点
+    
+    [activity setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];//设置进度轮显示类型
+    
+    [self.view addSubview:activity];
+    [activity startAnimating];
+    [manager GET:@"getList.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"返回值为%@",responseObject);
+        NSDictionary* dictArr = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        
+        NSString *string = [dictArr objectForKey:@"item"];
+        NSArray *array = [dictArr objectForKey:@"item"];
+        if (![string isEqual:[NSNull null]]) {
+            for(NSInteger i=0;i<[array count];i++){
+                NSDictionary *tempDict = [array objectAtIndex:i];
+                NSString *code = [tempDict objectForKey:@"code"];
+                NSString *name = [tempDict objectForKey:@"name"];
+                NSLog(@"%@ %@",name,code);
+                Heater *heater = [[Heater alloc] init];
+                heater.name = name;
+                heater.ID = code;
+                [heaterArray addObject:heater];
+            }
+        }
+            [activity stopAnimating];
+            [self.tableView reloadData];
+
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"错误" message:@"连接服务器" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:nil];
+        [alertController addAction:cancelAction];
+        [self presentViewController:alertController animated:true completion:nil];
+      [activity stopAnimating];
+    }];
+   
+   
 }
 
-
+-(void)deleteEquipment{
+    
+    
+    
+    NSURL *serverURL = [NSURL URLWithString:@"http://nuanyun.applinzi.com/"];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:serverURL];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",nil];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSString* mobile = [user objectForKey:@"mobile"];
+    [params setValue:mobile forKey:@"mobile"]; //发送ID
+    NSString *code = [user objectForKey:@"code"];
+    [params setValue:code forKey:@"code"];
+    
+    UIActivityIndicatorView *activity = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];//指定进度轮的大小
+    
+    [activity setCenter:CGPointMake(160, 140)];//指定进度轮中心点
+    
+    [activity setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];//设置进度轮显示类型
+    
+    [self.view addSubview:activity];
+    [activity startAnimating];
+    [manager GET:@"deleteEquipment.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"hehe");
+        NSString *result = [responseObject objectForKey:@"result"];
+        if([result isEqualToString:@"1"]){
+            
+            
+        }else{
+            
+           
+        }
+        [activity stopAnimating];
+        
+        [self.tableView reloadData];
+        
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"错误" message:@"连接服务器" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:nil];
+        [alertController addAction:cancelAction];
+        [self presentViewController:alertController animated:true completion:nil];
+        [activity stopAnimating];
+    }];
+    
+    
+}
 
 @end

@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		0D4925361CB7EA9B008A6B4D /* ThermometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4925351CB7EA9B008A6B4D /* ThermometerViewController.m */; };
 		0D4925381CB7EACC008A6B4D /* wendu_fang.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4925371CB7EACC008A6B4D /* wendu_fang.m */; };
+		0D72CBE41CCB319D004C9D2D /* GlobalHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D72CBE31CCB319D004C9D2D /* GlobalHolder.m */; };
+		0D8650901CC9346B00981903 /* SetThermometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D86508F1CC9346B00981903 /* SetThermometerViewController.m */; };
+		0D8650931CC942A800981903 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8650921CC942A800981903 /* RootViewController.m */; };
+		0D8650961CC96A3500981903 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8650951CC96A3500981903 /* PickerViewController.m */; };
+		0D9AE15B1CC5184400340F58 /* ControlThermometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9AE15A1CC5184400340F58 /* ControlThermometer.m */; };
+		0D9AE1641CC53ED000340F58 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9AE1631CC53ED000340F58 /* MainViewController.m */; };
 		0DABD5FB1CB67E3A008C0F7C /* Heater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DABD5FA1CB67E3A008C0F7C /* Heater.m */; };
 		0DABD6021CB6AAB3008C0F7C /* StatueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DABD6011CB6AAB3008C0F7C /* StatueViewController.m */; };
 		0DABD6091CB6CA1A008C0F7C /* TableViewCellForStatueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DABD6081CB6CA1A008C0F7C /* TableViewCellForStatueViewController.xib */; };
@@ -22,6 +28,12 @@
 		0DD08AFC1CB4E63B00F9402D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD08AFA1CB4E63B00F9402D /* Main.storyboard */; };
 		0DD08AFE1CB4E63B00F9402D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DD08AFD1CB4E63B00F9402D /* Assets.xcassets */; };
 		0DD08B011CB4E63B00F9402D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DD08AFF1CB4E63B00F9402D /* LaunchScreen.storyboard */; };
+		0DDD77A91CCFD400006CA3B5 /* GifView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD77A81CCFD400006CA3B5 /* GifView.m */; };
+		0DDD77AB1CCFD985006CA3B5 /* warning.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0DDD77AA1CCFD985006CA3B5 /* warning.gif */; };
+		0DDD77AD1CCFE438006CA3B5 /* on.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0DDD77AC1CCFE438006CA3B5 /* on.gif */; };
+		0DDD77AF1CCFE443006CA3B5 /* off.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0DDD77AE1CCFE443006CA3B5 /* off.gif */; };
+		0DE5DC7B1CCB32E800CDFDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DE5DC7A1CCB32E800CDFDCC /* Assets.xcassets */; };
+		0DE5DC7D1CCB32F600CDFDCC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DE5DC7C1CCB32F600CDFDCC /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +58,16 @@
 		0D4925351CB7EA9B008A6B4D /* ThermometerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThermometerViewController.m; sourceTree = "<group>"; };
 		0D4925371CB7EACC008A6B4D /* wendu_fang.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wendu_fang.m; sourceTree = "<group>"; };
 		0D4925391CB7EAD8008A6B4D /* wendu_fang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wendu_fang.h; sourceTree = "<group>"; };
+		0D72CBE31CCB319D004C9D2D /* GlobalHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalHolder.m; sourceTree = "<group>"; };
+		0D86508C1CC9345000981903 /* SetThermometerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetThermometerViewController.h; sourceTree = "<group>"; };
+		0D86508F1CC9346B00981903 /* SetThermometerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetThermometerViewController.m; sourceTree = "<group>"; };
+		0D8650911CC9429700981903 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		0D8650921CC942A800981903 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		0D8650941CC96A2300981903 /* PickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
+		0D8650951CC96A3500981903 /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		0D9AE15A1CC5184400340F58 /* ControlThermometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlThermometer.m; sourceTree = "<group>"; };
+		0D9AE15F1CC5188100340F58 /* ControlThermometer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlThermometer.h; sourceTree = "<group>"; };
+		0D9AE1631CC53ED000340F58 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		0DABD5F91CB67E3A008C0F7C /* Heater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Heater.h; sourceTree = "<group>"; };
 		0DABD5FA1CB67E3A008C0F7C /* Heater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Heater.m; sourceTree = "<group>"; };
 		0DABD6001CB6AA9A008C0F7C /* StatueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatueViewController.h; sourceTree = "<group>"; };
@@ -57,6 +79,8 @@
 		0DBE38701CB8129200A63A7D /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AFNetworking; sourceTree = "<group>"; };
 		0DBE38731CB83AA800A63A7D /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
 		0DBE38751CB83AC600A63A7D /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		0DC494161CC5427E00093B10 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		0DC494171CC5458900093B10 /* GlobalHolder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalHolder.h; sourceTree = "<group>"; };
 		0DD08AEE1CB4E63B00F9402D /* HeaterLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeaterLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD08AF21CB4E63B00F9402D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0DD08AF41CB4E63B00F9402D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,6 +91,13 @@
 		0DD08AFD1CB4E63B00F9402D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DD08B001CB4E63B00F9402D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DD08B021CB4E63B00F9402D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DDD77A51CCFD3DF006CA3B5 /* GifView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GifView.h; sourceTree = "<group>"; };
+		0DDD77A81CCFD400006CA3B5 /* GifView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GifView.m; sourceTree = "<group>"; };
+		0DDD77AA1CCFD985006CA3B5 /* warning.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = warning.gif; sourceTree = "<group>"; };
+		0DDD77AC1CCFE438006CA3B5 /* on.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = on.gif; sourceTree = "<group>"; };
+		0DDD77AE1CCFE443006CA3B5 /* off.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = off.gif; sourceTree = "<group>"; };
+		0DE5DC7A1CCB32E800CDFDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0DE5DC7C1CCB32F600CDFDCC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6447E150E95A073240D36832 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BE588F9CA43886DA659946D1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0FF52C985E4C4994350FA10 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,28 +146,47 @@
 		0DD08AF01CB4E63B00F9402D /* HeaterLogin */ = {
 			isa = PBXGroup;
 			children = (
+				0DE5DC7A1CCB32E800CDFDCC /* Assets.xcassets */,
+				0DE5DC7C1CCB32F600CDFDCC /* Images.xcassets */,
 				0DABD5F91CB67E3A008C0F7C /* Heater.h */,
 				0DABD5FA1CB67E3A008C0F7C /* Heater.m */,
+				0DC494161CC5427E00093B10 /* MainViewController.h */,
+				0D9AE1631CC53ED000340F58 /* MainViewController.m */,
+				0DC494171CC5458900093B10 /* GlobalHolder.h */,
 				0DD08AF21CB4E63B00F9402D /* main.m */,
 				0DD08AF41CB4E63B00F9402D /* AppDelegate.h */,
 				0DD08AF51CB4E63B00F9402D /* AppDelegate.m */,
 				0DD08AF71CB4E63B00F9402D /* LoginViewController.h */,
+				0DDD77AE1CCFE443006CA3B5 /* off.gif */,
 				0DD08AF81CB4E63B00F9402D /* LoginViewController.m */,
 				0DD08AFA1CB4E63B00F9402D /* Main.storyboard */,
 				0DD08AFD1CB4E63B00F9402D /* Assets.xcassets */,
 				0DD08AFF1CB4E63B00F9402D /* LaunchScreen.storyboard */,
 				0DD08B021CB4E63B00F9402D /* Info.plist */,
+				0D8650911CC9429700981903 /* RootViewController.h */,
+				0DDD77AC1CCFE438006CA3B5 /* on.gif */,
+				0D8650921CC942A800981903 /* RootViewController.m */,
 				0DABD6001CB6AA9A008C0F7C /* StatueViewController.h */,
 				0DABD6011CB6AAB3008C0F7C /* StatueViewController.m */,
 				0DABD6081CB6CA1A008C0F7C /* TableViewCellForStatueViewController.xib */,
+				0DDD77AA1CCFD985006CA3B5 /* warning.gif */,
 				0DABD60C1CB6FAB4008C0F7C /* ModifyHeaterViewController.h */,
 				0DABD60D1CB6FAC7008C0F7C /* ModifyHeaterViewController.m */,
 				0DABD60F1CB6FFBB008C0F7C /* TableViewCellForModifyHeaterVIewController.xib */,
 				0D4925341CB7EA87008A6B4D /* ThermometerViewController.h */,
+				0D8650941CC96A2300981903 /* PickerViewController.h */,
+				0D8650951CC96A3500981903 /* PickerViewController.m */,
+				0D86508C1CC9345000981903 /* SetThermometerViewController.h */,
+				0D86508F1CC9346B00981903 /* SetThermometerViewController.m */,
+				0D72CBE31CCB319D004C9D2D /* GlobalHolder.m */,
 				0D4925351CB7EA9B008A6B4D /* ThermometerViewController.m */,
 				0D4925371CB7EACC008A6B4D /* wendu_fang.m */,
 				0D4925391CB7EAD8008A6B4D /* wendu_fang.h */,
+				0D9AE15A1CC5184400340F58 /* ControlThermometer.m */,
+				0D9AE15F1CC5188100340F58 /* ControlThermometer.h */,
 				0DD08AF11CB4E63B00F9402D /* Supporting Files */,
+				0DDD77A51CCFD3DF006CA3B5 /* GifView.h */,
+				0DDD77A81CCFD400006CA3B5 /* GifView.m */,
 			);
 			path = HeaterLogin;
 			sourceTree = "<group>";
@@ -252,9 +302,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DD08B011CB4E63B00F9402D /* LaunchScreen.storyboard in Resources */,
+				0DDD77AF1CCFE443006CA3B5 /* off.gif in Resources */,
+				0DE5DC7D1CCB32F600CDFDCC /* Images.xcassets in Resources */,
 				0DD08AFE1CB4E63B00F9402D /* Assets.xcassets in Resources */,
+				0DDD77AB1CCFD985006CA3B5 /* warning.gif in Resources */,
 				0DABD6091CB6CA1A008C0F7C /* TableViewCellForStatueViewController.xib in Resources */,
+				0DDD77AD1CCFE438006CA3B5 /* on.gif in Resources */,
 				0DD08AFC1CB4E63B00F9402D /* Main.storyboard in Resources */,
+				0DE5DC7B1CCB32E800CDFDCC /* Assets.xcassets in Resources */,
 				0DABD6101CB6FFBB008C0F7C /* TableViewCellForModifyHeaterVIewController.xib in Resources */,
 				0DBE38711CB8129200A63A7D /* AFNetworking in Resources */,
 			);
@@ -315,13 +370,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9AE1641CC53ED000340F58 /* MainViewController.m in Sources */,
 				0DD08AF91CB4E63B00F9402D /* LoginViewController.m in Sources */,
 				0DD08AF61CB4E63B00F9402D /* AppDelegate.m in Sources */,
+				0D9AE15B1CC5184400340F58 /* ControlThermometer.m in Sources */,
 				0D4925361CB7EA9B008A6B4D /* ThermometerViewController.m in Sources */,
 				0DD08AF31CB4E63B00F9402D /* main.m in Sources */,
 				0DABD6021CB6AAB3008C0F7C /* StatueViewController.m in Sources */,
+				0D8650931CC942A800981903 /* RootViewController.m in Sources */,
+				0DDD77A91CCFD400006CA3B5 /* GifView.m in Sources */,
 				0D4925381CB7EACC008A6B4D /* wendu_fang.m in Sources */,
+				0D8650901CC9346B00981903 /* SetThermometerViewController.m in Sources */,
 				0DABD5FB1CB67E3A008C0F7C /* Heater.m in Sources */,
+				0D8650961CC96A3500981903 /* PickerViewController.m in Sources */,
+				0D72CBE41CCB319D004C9D2D /* GlobalHolder.m in Sources */,
 				0DABD60E1CB6FAC7008C0F7C /* ModifyHeaterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

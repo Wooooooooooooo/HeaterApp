@@ -233,9 +233,9 @@
         
         
         //以下是发给服务器的HTTP请求报文
-        /*
-         / 这里发送HTTP请求,获取设备的温度信息
-         NSURL *serverURL = [NSURL URLWithString:@"https://www.baidu.com/"]; //短信验证码服务器url
+        
+         // 这里发送HTTP请求,获取设备的温度信息
+         NSURL *serverURL = [NSURL URLWithString:@"http://123.184.30.117:8887/"]; //短信验证码服务器url
          
          //AFHTTPSessionManager 创建一个网络请求
          AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:serverURL];
@@ -248,19 +248,36 @@
          //Responses 响应Header参数
          manager.responseSerializer = [AFHTTPResponseSerializer serializer];
          //系统参数
-         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
          
          //参数urlParam 可以设置多个参数
-         //     NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
-         //    [params setValue:ID forKey:@"ID"]; //发送ID
-         [manager GET:@"index.html" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+              NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+        
+        
+     
+   
+        
+        [params setValue:@"10" forKey:@"Order"];
+     //   [params setValue:currentID forKey:@"id"]; //发送ID
+        [params setValue:@"732C78D5494B6C63985A4419D6105115" forKey:@"id"];
+           NSString * stringTemperature = [NSString stringWithFormat:@"%3.1f",newTemperature];
+      //  [params setValue:stringTemperature forKey:@"temperature"];
+         [params setValue:@"22.5" forKey:@"temperature"];
+        NSString * stringCurrentTime = [NSString stringWithFormat:@"%3.1f",currentTime];
+      //  [params setValue:stringCurrentTime forKey:@"delayTime"];
+        [params setValue:@"5.0" forKey:@"delayTime"];
+         NSString * stringHeatTime = [NSString stringWithFormat:@"%3.1f",newTime];
+      //  [params setValue:stringHeatTime forKey:@"heatTime"];
+        [params setValue:@"4.0" forKey:@"heatTime"];
+         [manager GET:@"index.html" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
          NSLog(@"成功 HTML: %@", [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding]);
+             NSLog(@"chenggon");
          } failure:^(NSURLSessionDataTask *task, NSError *error) {
          NSLog(@"失败 visit error: %@",error);
          }];
          
          
-         */
+        
     
         if(true){ //判断，如果发送成功
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"设置成功" preferredStyle:UIAlertControllerStyleAlert];
