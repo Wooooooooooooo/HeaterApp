@@ -16,5 +16,7 @@
    @property (nonatomic,strong) NSString *ID;   //ID号码，唯一
    @property (nonatomic,strong) NSString *name;//用户定义的名称
    @property (nonatomic,strong) NSString *captcha;  //验证码
+   @property (nonatomic,strong) NSString *state;
+   @property (nonatomic,strong) NSString *temperature;
 
 @end

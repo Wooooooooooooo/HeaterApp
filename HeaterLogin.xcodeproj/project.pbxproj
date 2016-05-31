@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D4925361CB7EA9B008A6B4D /* ThermometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4925351CB7EA9B008A6B4D /* ThermometerViewController.m */; };
 		0D4925381CB7EACC008A6B4D /* wendu_fang.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4925371CB7EACC008A6B4D /* wendu_fang.m */; };
+		0D5A907F1CE6D79400538A3C /* ShowStatueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5A907E1CE6D79400538A3C /* ShowStatueViewController.m */; };
+		0D5A90841CE6E7F900538A3C /* CellForShowStatueView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5A90831CE6E7F900538A3C /* CellForShowStatueView.xib */; };
 		0D72CBE41CCB319D004C9D2D /* GlobalHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D72CBE31CCB319D004C9D2D /* GlobalHolder.m */; };
 		0D8650901CC9346B00981903 /* SetThermometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D86508F1CC9346B00981903 /* SetThermometerViewController.m */; };
 		0D8650931CC942A800981903 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8650921CC942A800981903 /* RootViewController.m */; };
@@ -58,6 +60,9 @@
 		0D4925351CB7EA9B008A6B4D /* ThermometerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThermometerViewController.m; sourceTree = "<group>"; };
 		0D4925371CB7EACC008A6B4D /* wendu_fang.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wendu_fang.m; sourceTree = "<group>"; };
 		0D4925391CB7EAD8008A6B4D /* wendu_fang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wendu_fang.h; sourceTree = "<group>"; };
+		0D5A907E1CE6D79400538A3C /* ShowStatueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowStatueViewController.m; sourceTree = "<group>"; };
+		0D5A90821CE6D7B500538A3C /* ShowStatueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowStatueViewController.h; sourceTree = "<group>"; };
+		0D5A90831CE6E7F900538A3C /* CellForShowStatueView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellForShowStatueView.xib; sourceTree = "<group>"; };
 		0D72CBE31CCB319D004C9D2D /* GlobalHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalHolder.m; sourceTree = "<group>"; };
 		0D86508C1CC9345000981903 /* SetThermometerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetThermometerViewController.h; sourceTree = "<group>"; };
 		0D86508F1CC9346B00981903 /* SetThermometerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetThermometerViewController.m; sourceTree = "<group>"; };
@@ -184,6 +189,9 @@
 				0D4925391CB7EAD8008A6B4D /* wendu_fang.h */,
 				0D9AE15A1CC5184400340F58 /* ControlThermometer.m */,
 				0D9AE15F1CC5188100340F58 /* ControlThermometer.h */,
+				0D5A907E1CE6D79400538A3C /* ShowStatueViewController.m */,
+				0D5A90821CE6D7B500538A3C /* ShowStatueViewController.h */,
+				0D5A90831CE6E7F900538A3C /* CellForShowStatueView.xib */,
 				0DD08AF11CB4E63B00F9402D /* Supporting Files */,
 				0DDD77A51CCFD3DF006CA3B5 /* GifView.h */,
 				0DDD77A81CCFD400006CA3B5 /* GifView.m */,
@@ -304,6 +312,7 @@
 				0DD08B011CB4E63B00F9402D /* LaunchScreen.storyboard in Resources */,
 				0DDD77AF1CCFE443006CA3B5 /* off.gif in Resources */,
 				0DE5DC7D1CCB32F600CDFDCC /* Images.xcassets in Resources */,
+				0D5A90841CE6E7F900538A3C /* CellForShowStatueView.xib in Resources */,
 				0DD08AFE1CB4E63B00F9402D /* Assets.xcassets in Resources */,
 				0DDD77AB1CCFD985006CA3B5 /* warning.gif in Resources */,
 				0DABD6091CB6CA1A008C0F7C /* TableViewCellForStatueViewController.xib in Resources */,
@@ -381,6 +390,7 @@
 				0DDD77A91CCFD400006CA3B5 /* GifView.m in Sources */,
 				0D4925381CB7EACC008A6B4D /* wendu_fang.m in Sources */,
 				0D8650901CC9346B00981903 /* SetThermometerViewController.m in Sources */,
+				0D5A907F1CE6D79400538A3C /* ShowStatueViewController.m in Sources */,
 				0DABD5FB1CB67E3A008C0F7C /* Heater.m in Sources */,
 				0D8650961CC96A3500981903 /* PickerViewController.m in Sources */,
 				0D72CBE41CCB319D004C9D2D /* GlobalHolder.m in Sources */,

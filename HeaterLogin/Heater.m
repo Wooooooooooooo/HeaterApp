@@ -22,6 +22,8 @@
     [aCoder encodeObject:self.ID forKey:@"ID"];
     [aCoder encodeObject:self.captcha forKey:@"captcha"];
     [aCoder encodeObject:self.name forKey:@"name"];
+     [aCoder encodeObject:self.temperature forKey:@"temperature"];
+     [aCoder encodeObject:self.state forKey:@"state"];
    
 }
 
@@ -32,6 +34,8 @@
         self.ID = [aDecoder decodeObjectForKey:@"ID"];
         self.captcha = [aDecoder decodeObjectForKey:@"captcha"];
         self.name = [aDecoder decodeObjectForKey:@"name"];
+        self.temperature = [aDecoder decodeObjectForKey:@"temperature"];
+        self.state = [aDecoder decodeObjectForKey:@"state"];
     }
     return  self;
 }

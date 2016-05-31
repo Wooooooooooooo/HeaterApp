@@ -13,21 +13,18 @@
 #import "AFNetworking.h"
 
 
-@interface SetThermometerViewController : UIViewController
+@interface SetThermometerViewController : UIViewController<UIPickerViewDelegate,UITextFieldDelegate,UIPickerViewDataSource>
+
 
 @property NSInteger pageIndex;
-@property IBOutlet UITextField *heatTimeTextField;
-@property IBOutlet UITextField *delayTimeTextField;
-@property IBOutlet UITextField *heatTemperatureTextField;
-@property IBOutlet UITextField *delayHeatTemperatureTextField;
 @property IBOutlet UILabel *currentTemperatureLabel;
 @property IBOutlet UITextField *lastModifiedTime;
-@property IBOutlet UIStepper *heatTimeStepper;
-@property IBOutlet UIStepper *delayTimeStepper;
-@property IBOutlet UIStepper *heatTemperatureStepper;
-@property IBOutlet UIStepper *delayHeatTemperatureStepper;
 @property IBOutlet UIButton *sendButton;
 @property IBOutlet UIWebView *webView;
+
+@property (nonatomic, strong) IBOutlet UIPickerView* setLastTimeView;
+@property (nonatomic, strong) IBOutlet UIPickerView* setDelayTimeView;
+@property (nonatomic, strong) IBOutlet UIPickerView* setTemperatureView;
 
 @end
 
